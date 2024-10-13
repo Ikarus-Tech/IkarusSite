@@ -1,21 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const navPopup = document.getElementById('nav-popup');
-
-    menuToggle.addEventListener('click', () => {
-        navPopup.classList.toggle('show');
-    });
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            navPopup.classList.remove('show');
-        }
-    });
-
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-            card.classList.toggle('expanded');
-        });
-    });
-
-});
+/*=============== SHOW MENU ===============*/
+const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+          nav = document.getElementById(navId)
+ 
+    toggle.addEventListener('click', () =>{
+        // Add show-menu class to nav menu
+        nav.classList.toggle('show-menu')
+ 
+        // Add show-icon to show and hide the menu icon
+        toggle.classList.toggle('show-icon')
+    })
+ }
+ 
+ showMenu('nav-toggle','nav-menu')

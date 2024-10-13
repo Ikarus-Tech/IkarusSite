@@ -12,6 +12,36 @@
     --background_cor2: #0f0f16;
     --tittles_size: 40px;
     --text_size: 0.95rem;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: hsl(220, 100%, 97%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: .938rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
 
 body {
@@ -23,177 +53,299 @@ body {
     font-size: var(--text_size);
 }
 
-header {
-    background-color: var(--cor5);
-    padding: 1rem 0;
-    position: relative;
-    z-index: 10;
-    position: sticky;
+ul {
+    list-style: none;
+    /* Color highlighting when pressed on mobile devices */
+    /*-webkit-tap-highlight-color: transparent;*/
 }
 
-nav {
+a {
+    text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-fixed);
+    backdrop-filter: blur(3px);
+}
+
+/*=============== NAV ===============*/
+.nav {
+    height: var(--header-height);
+}
+
+.nav__logo,
+.nav__burger,
+.nav__close {
+    color: var(--white-color);
+}
+
+.nav__data {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
 }
 
-nav .logo {
-    height: 70px;
-    transition: height 0.3s ease;
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    width: 128px;
+    height: auto;
 }
 
-/* Estilo para a barra de navegação */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    /* Cor de fundo da barra de navegação */
+.nav__logo img {
+    width: 100%;
 }
 
-nav ul li {
+.nav__toggle {
     position: relative;
+    width: 32px;
+    height: 32px;
 }
 
-nav ul li a {
-    display: block;
-    padding: 12px 25px;
-    color: #ffffff;
-    /* Cor do texto branco */
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    
-    /* Cor ao passar o mouse */
-    color: var(--cor3);
-    border-radius: 4px;
-    /* Arredondamento suave nas bordas */
-}
-
-/* Estilo para o dropdown (submenu) */
-nav ul .dropdown {
-    display: none;
+.nav__burger,
+.nav__close {
     position: absolute;
-    top: calc(100% + 10px);
-    /* Espaçamento abaixo do link de "Serviços" */
-    left: 0;
-    background-color: #3d3d3d;
-    /* Cor de fundo do dropdown */
-    min-width: 200px;
-    border-radius: 6px;
-    /* Arredondamento nas bordas do dropdown */
-    z-index: 1;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    /* Sombra leve para dar profundidade */
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-nav ul .dropdown li {
-    display: block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* Linha separadora leve */
+/* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+    .nav__menu {
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        height: calc(100vh - 3.5rem);
+        overflow: auto;
+        pointer-events: none;
+        opacity: 0;
+        transition: top .4s, opacity .3s;
+    }
+
+    .nav__menu::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nav__list {
+        background-color: var(--black-color);
+        padding-top: 1rem;
+    }
 }
 
-nav ul .dropdown li:last-child {
-    border-bottom: none;
-    /* Remove a linha da última opção */
+.nav__link {
+    color: var(--white-color);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color .3s;
 }
 
-nav ul .dropdown li a {
-    padding: 12px 20px;
-    color: #ffffff;
-    /* Cor do texto branco */
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.nav__link:hover {
+    background-color: var(--black-color-light);
 }
 
-nav ul .dropdown li a:hover {
-    background-color: #606060;
-    /* Cor ao passar o mouse */
-    color: var(--cor3);
-    /* Destaque da cor ao passar o mouse */
-}
-
-/* Mostrar o dropdown ao passar o mouse */
-nav ul li:hover .dropdown {
-    display: block;
+/* Show menu */
+.show-menu {
     opacity: 1;
-    visibility: visible;
+    top: 3.5rem;
+    pointer-events: initial;
 }
 
-
-#call_btn li a {
-    padding: 10px;
-    text-decoration: none;
-    color: white;
-    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
-    border-radius: 10px;
+/* Show icon */
+.show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
 }
 
-#call {
-    display: block;
-    transition: 0.5s;
+.show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
 }
 
-#call:hover {
-    transform: scale(1.05);
-}
-
-.menu-toggle {
-    display: none;
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
     cursor: pointer;
 }
 
-.menu-toggle img {
-    height: 30px;
+.dropdown__arrow {
+    font-size: 1.25rem;
+    font-weight: initial;
+    transition: transform .4s;
 }
 
-#nav-popup {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--background_cor1);
-    padding: 1rem 0;
-    text-align: center;
-    z-index: 20;
+.dropdown__link,
+.dropdown__sublink {
+    padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+    color: var(--white-color);
+    background-color: var(--black-color-light);
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    transition: background-color .3s;
 }
 
-#nav-popup ul {
-    list-style-type: none;
-    padding: 0;
+.dropdown__icon {
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: 20px;
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+    vertical-align: middle;
 }
 
-#nav-popup ul {
-    list-style-type: none;
-    padding: 0;
+.dropdown__icon img{
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: 20px;
 }
 
-#nav-popup ul li {
-    margin: 5px 0;
+.dropdown__link:hover,
+.dropdown__sublink:hover {
+    background-color: var(--black-color);
 }
 
-#nav-popup ul li a {
-    display: block;
-    text-decoration: none;
-    color: var(--cor3);
-    font-size: 16px;
-    padding: 10px;
-    transition: background-color 0.3s, color 0.3s;
+.dropdown__menu,
+.dropdown__submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
 }
 
-#nav-popup ul li a:hover {
-    color: #fff;
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu,
+.dropdown__subitem:hover>.dropdown__submenu {
+    max-height: 1000px;
+    transition: max-height .4s ease-in;
 }
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+/*=============== DROPDOWN SUBMENU ===============*/
+.dropdown__add {
+    margin-left: auto;
+}
+
+.dropdown__sublink {
+    background-color: var(--black-color-lighten);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .nav__link {
+        padding-inline: 1rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 2rem);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__list {
+        height: 100%;
+        display: flex;
+        column-gap: 3rem;
+    }
+
+    .nav__link {
+        height: 100%;
+        padding: 0;
+        justify-content: initial;
+        column-gap: .25rem;
+    }
+
+    .nav__link:hover {
+        background-color: transparent;
+    }
+
+    .dropdown__item,
+    .dropdown__subitem {
+        position: relative;
+    }
+
+    .dropdown__menu,
+    .dropdown__submenu {
+        max-height: initial;
+        overflow: initial;
+        position: absolute;
+        left: 0;
+        top: 6rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s, top .3s;
+    }
+
+    .dropdown__link,
+    .dropdown__sublink {
+        padding-inline: 1rem 3.5rem;
+    }
+
+    .dropdown__subitem .dropdown__link {
+        padding-inline: 1rem;
+    }
+
+    .dropdown__submenu {
+        position: absolute;
+        left: 100%;
+        top: .5rem;
+    }
+
+    /* Show dropdown menu */
+    .dropdown__item:hover .dropdown__menu {
+        opacity: 1;
+        top: 5.5rem;
+        pointer-events: initial;
+        transition: top .3s;
+    }
+
+    /* Show dropdown submenu */
+    .dropdown__subitem:hover>.dropdown__submenu {
+        opacity: 1;
+        top: 0;
+        pointer-events: initial;
+        transition: top .3s;
+    }
+}
+
+
 
 h2 {
     font-size: 3rem;
@@ -205,6 +357,7 @@ h2 {
     height: 100vh;
     display: flex;
     align-items: center;
+    margin-top: 5%;
 }
 
 .hero-content {
@@ -239,13 +392,15 @@ h2 {
 }
 
 .hero-text a {
-    padding: 15px;
+    padding: 12px;
     text-decoration: none;
     color: white;
     background-image: linear-gradient(to right, var(--cor1), var(--cor3));
     border-radius: 10px;
-
-
+    display: block;
+    width: fit-content;
+    margin-top: -20px;
+    transition: 0.5s;
 }
 
 .hero-text a:hover {
@@ -295,7 +450,7 @@ h2 {
     position: relative;
     width: 100%;
     height: 100vh;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .valores-container {
@@ -326,8 +481,14 @@ h2 {
     padding: 12px;
     background-color: var(--cor2);
     color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     width: fit-content;
+    display: block;
+    transition: 0.5s;
+}
+
+.valores-text a:hover {
+    transform: scale(1.05);
 }
 
 .valores-img {
@@ -521,14 +682,10 @@ h2 {
     border-radius: 10px;
 }
 
-.trabalhar-conosco {
-    padding: 50px 0;
-}
 
 .trabalhar-conosco-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+    width: 90%;
+    margin: 10% auto;
     /* Centraliza o título, texto e os cards */
 }
 
@@ -538,12 +695,63 @@ h2 {
     color: #ffffff;
 }
 
-.trabalhar-conosco-container p {
+.work-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.work-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), transparent, transparent);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.445);
+    flex: 1 1 200px;
+    max-width: 250px;
+    transition: 0.5s;
+}
+
+.work-card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.041), transparent);
+    box-shadow: -1px -1px 1px #52a5d95e;
+    transition: 0.5s;
+}
+
+.work-card h3 {
+    color: #52A5D9;
+    margin-bottom: 10px;
+}
+
+.work-card p {
     color: #cccccc;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    /* Centraliza o texto e dá espaço antes dos cards */
+    font-size: 14px;
+}
+
+.card-icon {
+    width: 32px;
+    margin-bottom: -15px;
+}
+
+/*-----------------------*/
+.characteristics {
+    overflow: hidden;
+    padding: 50px 0;
+    background: linear-gradient(to bottom, rgba(24, 46, 92, 0.151), rgba(24, 46, 92, 0.068), transparent);
+    /* Gradiente suave de fundo */
+    position: relative;
+}
+
+.characteristics-container {
+    text-align: center;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 1;
+    /* Conteúdo acima do efeito */
 }
 
 .caract-cards {
@@ -601,7 +809,7 @@ h2 {
 .card p {
     width: 87%;
     color: #cccccc;
-    ;
+    margin: 0 auto;
     margin-bottom: -10px;
 }
 
@@ -655,12 +863,69 @@ h2 {
     /* Apenas sobe a imagem sem rotacionar */
 }
 
+
+/*--------------------------*/
+.seg-high {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px gray solid;
+    padding: 25px;
+    border-radius: 10px;
+    background: linear-gradient(-146deg, #29354988, transparent);
+    align-items: center;
+    /* Centraliza verticalmente os dois blocos */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+}
+
+.seg-high-text {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+    /* Espaço entre o texto e a imagem */
+    justify-content: center;
+}
+
+.seg-high-text a {
+    text-decoration: none;
+    color: #9e9e9e;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.seg-high-text a:hover {
+    background: linear-gradient(146deg, #29354988, transparent);
+    border-radius: 10px;
+}
+
+.seg-high-text p {
+    text-align: justify;
+}
+
+.seg-high-img {
+    flex: 1;
+    max-width: 50%;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    /* Centraliza a imagem verticalmente */
+}
+
+.seg-high-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
 .quote-section {
     position: relative;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
+    margin: 5% auto;
+    border-radius: 10px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -668,7 +933,7 @@ h2 {
     text-align: center;
     overflow: hidden;
     /* Garante que nada "vaze" da seção */
-    margin-top: 25px;
+
 }
 
 .quote-back {
@@ -712,7 +977,6 @@ h2 {
 }
 
 .quote-overlay p {
-    font-size: 18px;
     margin-bottom: 20px;
     max-width: 600px;
     color: #e9e9e9;

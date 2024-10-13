@@ -12,44 +12,84 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Ikarus Tech</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img src="Media/Images/IKARUS TECH_023734/Logo Site.png" alt="Ikarus" class="logo">
-            <div class="menu-toggle" id="menu-toggle">
-                <img src="Media/Images/Icones/menu-hamburguer_white.png" alt="Menu Icon" class="menu-icon">
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <img src="Media/Images/IKARUS TECH_023734/Logo Site.png" alt="">
+                </a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
             </div>
-            <ul id="menu_1" class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li>
-                    <a href="#servicos">Serviços</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Desenvolvimento de Websites</a></li>
-                        <li><a href="#">Aplicativos Desktop</a></li>
-                        <li><a href="#">Aplicativos Mobile</a></li>
-                        <li><a href="#">Automação Residencial</a></li>
-                        <li><a href="#">Segurança Eletrônica</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="sobrenos.html" id="sobre_nos_link">Sobre-nos</a></li>
-            </ul>
-            <ul class="menu" id="call_btn">
-                <li><a id="call" href="sobrenos.html" id="sobre_nos_link">Agendar Chamada</a></li>
-            </ul>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="#" class="nav__link">Home</a></li>
+
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Serviços <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/website.png" alt="Desenvolvimento de Websites" class="dropdown__icon"> Desenvolvimento de Websites
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/aplicativo-de-desktop.png" alt="Aplicativos Desktop" class="dropdown__icon"> Aplicativos Desktop
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/aplicativo-movel (1).png" alt="Aplicativos Mobile" class="dropdown__icon"> Aplicativos Mobile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/automacao-residencial (1).png" alt="Automação Residencial" class="dropdown__icon"> Automação Residencial
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/camera-de-seguranca (2).png" alt="Segurança Eletrônica" class="dropdown__icon"> Segurança Eletrônica
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/computacao-em-nuvem.png" alt="Hospedagem de Websites" class="dropdown__icon"> Hospedagem de Websites
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown__link">
+                                    <img src="Media/Images/Icones/o-email (1).png" alt="Criação de Emails Corporativos" class="dropdown__icon"> Criação de Emails Corporativos
+                                </a>
+                            </li>                            
+                        </ul>
+                    </li>
+
+                    <li><a href="#" class="nav__link">Noticias</a></li>
+                    <li><a href="#" class="nav__link">Sobre-Nos</a></li>
+                </ul>
+            </div>
+            <div class="nav__menu">
+                <a href="#" class="nav__link" id="nav-call">Agendar Chamada</a>
+            </div>
         </nav>
-        <div id="nav-popup" class="nav-popup">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#">Novidades</a></li>
-                <li><a href="#contactos">Sobre-nos</a></li>
-            </ul>
-        </div>
     </header>
     <main>
         <section class="hero">
@@ -117,9 +157,8 @@
                         <section class="service-card">
                             <img src="Media/Images/Icones/camera-de-seguranca (2).png" alt="">
                             <h3>Segurança <span style="color: #52A5D9;">Eletronica</span></h2>
-                                <p>Soluções completas de segurança com sistemas de vigilância CCTV, oferecendo
-                                    instalação e
-                                    suporte técnico especializado.</p>
+                                <p>Oferecemos proteção completa com soluções de segurança eletrônica personalizadas,
+                                    garantindo eficácia, facilidade de uso e a sua tranquilidade.</p>
                         </section>
                     </a>
                     <a href="#">
@@ -135,16 +174,18 @@
                             <img src="Media/Images/Icones/computacao-em-nuvem.png" alt="">
                             <h3>Hospedagem de <span style="color: #52A5D9;">Websites</span></h2>
                                 <p>
-                                    Oferecemos hospedagem segura e rápida, com servidores de alta performance e suporte dedicado, garantindo seu site sempre disponível.
-                               </p>
+                                    Oferecemos hospedagem segura e rápida, com servidores de alta performance e suporte
+                                    dedicado, garantindo seu site sempre disponível.
+                                </p>
                         </section>
                     </a>
                     <a href="#">
                         <section class="service-card">
                             <img src="Media/Images/Icones/o-email (1).png" alt="">
-                            <h3>Criação de <span style="color: #52A5D9;">Emails</span></h2>
+                            <h3>Criação de <span style="color: #52A5D9;">Emails corporativos</span></h2>
                                 <p>
-                                    Garanta comunicação profissional com emails personalizados que fortalecem sua marca e aumentam a credibilidade com clientes e parceiros.
+                                    Garanta comunicação profissional com emails personalizados que fortalecem sua marca
+                                    e aumentam a credibilidade com clientes e parceiros.
                                 </p>
                         </section>
                     </a>
@@ -155,34 +196,56 @@
             <section class="qos-container">
                 <div class="qos-text">
                     <h2>Garantia de <span style="color: #52A5D9;">Resultados </span>Excelentes</h2>
-                    <p>Comprometidos com a sua satisfação, entregamos projetos de alta — qualidade que superam expectativas. Oferecemos soluções inovadoras para transformar suas ideias em realidade, sempre com excelência.</p>
+                    <p>Comprometidos com a sua satisfação, entregamos projetos de alta — qualidade que superam
+                        expectativas. Oferecemos soluções inovadoras para transformar suas ideias em realidade, sempre
+                        com excelência.</p>
                 </div>
                 <section class="qos-images">
                     <section class="qos-item" id="qos-item1"><img src="Media/Images/qos/qos_11.png" alt=""></section>
                     <section class="qos-item" id="qos-item2"><img src="Media/Images/qos/qos3.png" alt=""></section>
                 </section>
             </section>
-        </section>        
+        </section>
         <section class="trabalhar-conosco">
             <section class="trabalhar-conosco-container">
-                <h2>Porque Trabalhar <span style="color: #52A5D9;">Conosco?</span></h1>
-                    <p>Ao escolher trabalhar conosco, você opta por qualidade, compromisso e excelência. Nossa abordagem
-                        focada no cliente nos permite entender seus desafios e oferecer as melhores soluções do mercado.
-                        <span style="color: #52A5D9; font-weight: bold;">Nossas soluções incluem:</span>
-                    </p>
+                <h2>Porque Trabalhar <span style="color: #52A5D9;">Conosco?</span></h2>
+
+                <div class="work-cards">
+                    <div class="work-card">
+                        <img src="Media/Images/Icones/inovacao.png" alt="Ícone Inovação" class="card-icon">
+                        <h3>Inovação</h3>
+                        <p>Aplicamos tecnologias de ponta para oferecer soluções inovadoras e eficientes.</p>
+                    </div>
+                    <div class="work-card">
+                        <img src="Media/Images/Icones/eficiencia(1).png" alt="Ícone Eficiência" class="card-icon">
+                        <h3>Eficiência</h3>
+                        <p>Priorizamos a otimização de recursos para entregar resultados rápidos e eficazes.</p>
+                    </div>
+                    <div class="work-card">
+                        <img src="Media/Images/Icones/trabalhador.png" alt="Ícone Profissionalismo" class="card-icon">
+                        <h3>Profissionalismo</h3>
+                        <p>Contamos com uma equipe experiente e dedicada, garantindo qualidade em cada projeto.</p>
+                    </div>
+                    <div class="work-card">
+                        <img src="Media/Images/Icones/objeto.png" alt="Ícone Excelência" class="card-icon">
+                        <h3>Excelência</h3>
+                        <p>Nosso compromisso é superar expectativas com serviços de alta qualidade.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="characteristics">
+                <section class="characteristics-container">
+                    <h2>Nossas soluções <span style="color: #52A5D9;">incluem</span></h2>
                     <section class="caract-cards">
                         <section class="card">
                             <h3>Design <span style="color: #52A5D9;">Inovador</span></h3>
                             <p>Explore o design inovador que combina elegância e funcionalidade em cada detalhe.</p>
                             <section class="card-img">
-                                <img class="card-img1"
-                                    src="Media/Images/work_with_us/template_11.png"
+                                <img class="card-img1" src="Media/Images/work_with_us/template_11.png"
                                     alt="Design Inovador">
                             </section>
                         </section>
-
                         <section class="card" id="card_2">
-                            
                             <h3>Soluções <span style="color: #52A5D9;">Personalizadas</span></h3>
                             <p>Encontre soluções personalizadas que atendem às suas necessidades específicas.</p>
                             <section class="card-img">
@@ -190,17 +253,29 @@
                                     alt="Performance Avançada">
                             </section>
                         </section>
-
                         <section class="card" id="card_3">
                             <h3>Tecnologia <span style="color: #52A5D9;">de Ponta</span></h3>
-                            <p>Utilizamos as mais recentes tecnologias para desenvolver soluções inovadoras que antecipam as demandas do futuro.</p>
+                            <p>Utilizamos as mais recentes tecnologias para desenvolver soluções inovadoras que
+                                antecipam as
+                                demandas do futuro.</p>
                             <section class="card-img">
-                                <img class="card-img3" src="Media/Images/work_with_us/template_3.png" alt="Tecnologia de Ponta">
+                                <img class="card-img3" src="Media/Images/work_with_us/template_3.png"
+                                    alt="Tecnologia de Ponta">
                             </section>
                         </section>
-                        
                     </section>
+                </section>
             </section>
+            <section class="seg-high">
+                <div class="seg-high-text">
+                    <h2>Proteja o que importa com <span style="color: #52A5D9;">segurança de ponta!</span></h2>
+                    <p>Criamos e instalamos sistemas de segurança eletrônica personalizados, integrando câmeras de alta resolução, alarmes inteligentes e controle de acesso remoto. Seja para sua residência ou negócio, garantimos a proteção total do seu patrimônio.</p>
+                    <a href="#">Ver kits ></a>
+                </div>
+                <div class="seg-high-img">
+                    <img src="Media/Images/seg-ele-img.png" alt="">
+                </div>
+            </section>            
             <section class="quote-section">
                 <div class="quote-back">
                     <img src="Media/Images/quote-section.jpg" alt="">
@@ -263,7 +338,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/ikarustech_?igsh=cmFyYWExa3p4YWM%3D&utm_source=qr" target="_blank">
+                        <a href="https://www.instagram.com/ikarustech_?igsh=cmFyYWExa3p4YWM%3D&utm_source=qr"
+                            target="_blank">
                             <i class="bi bi-instagram"></i>
                         </a>
                     </li>

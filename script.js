@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const heroImage = document.querySelector(".hero-image img");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroImage.style.animationPlayState = "running";
+            } else {
+                heroImage.style.animationPlayState = "paused";
+            }
+        });
+    });
+
+    observer.observe(heroImage);
+});
+
 /*=============== SHOW MENU ===============*/
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),

@@ -99,7 +99,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+main a:hover {
     transform: perspective(500px) rotateY(20deg);
 }
 

@@ -51,6 +51,42 @@ body {
     background-image: linear-gradient(to bottom, var(--background_cor1), var(--background_cor2));
     color: var(--texto_white);
     font-size: var(--text_size);
+    overflow-x: hidden;
+}
+
+/* Raio de luz no body */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(111, 152, 255, 0.226) 15%, transparent 60%);
+    transform: rotate(45deg);
+    opacity: 0.6;
+    pointer-events: none;
+    /* Não interfere nas interações */
+    z-index: 0;
+    /* Fica atrás de todo o conteúdo */
+    animation: light-beam-body 10s ease-in-out infinite;
+}
+
+@keyframes light-beam-body {
+    0% {
+        transform: rotate(45deg) translateX(-10%);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: rotate(45deg) translateX(10%);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: rotate(45deg) translateX(-10%);
+        opacity: 0.4;
+    }
 }
 
 ul {
@@ -61,6 +97,10 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    transform: perspective(500px) rotateY(20deg);
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -161,7 +201,7 @@ a {
     justify-content: space-between;
     align-items: center;
     transition: 0.3s;
-    
+
 }
 
 .nav__link:hover {
@@ -210,14 +250,17 @@ a {
 }
 
 .dropdown__icon {
-    width: 20px; /* Ajuste o tamanho conforme necessário */
+    width: 20px;
+    /* Ajuste o tamanho conforme necessário */
     height: 20px;
-    margin-right: 8px; /* Espaço entre a imagem e o texto */
+    margin-right: 8px;
+    /* Espaço entre a imagem e o texto */
     vertical-align: middle;
 }
 
-.dropdown__icon img{
-    width: 20px; /* Ajuste o tamanho conforme necessário */
+.dropdown__icon img {
+    width: 20px;
+    /* Ajuste o tamanho conforme necessário */
     height: 20px;
 }
 
@@ -348,14 +391,11 @@ a {
     }
 }
 
-
-
 h2 {
     font-size: 3rem;
 }
 
 /* Hero Section*/
-
 .hero {
     height: 100vh;
     display: flex;
@@ -400,8 +440,8 @@ h2 {
 .hero-text a {
     padding: 12px;
     text-decoration: none;
-    color: white;
-    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
+    color: var(--texto_white2);
+    background-image: linear-gradient(to right, #5783aa, #629bbe);
     border-radius: 10px;
     display: block;
     width: fit-content;
@@ -410,7 +450,7 @@ h2 {
 }
 
 .hero-text a:hover {
-    transform: scale(1.05);
+    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
 }
 
 .hero-text section {
@@ -451,7 +491,6 @@ h2 {
     }
 }
 
-
 /*Valores*/
 .valores {
     position: relative;
@@ -466,21 +505,21 @@ h2 {
     margin-right: auto;
     display: flex;
     gap: 20px;
-    align-items: center; /* Alinha os itens verticalmente */
-    justify-content: space-between; /* Espaça os itens horizontalmente */
+    align-items: center;
+    /* Alinha os itens verticalmente */
+    justify-content: space-between;
+    /* Espaça os itens horizontalmente */
 }
 
 .valores-text {
     text-align: left;
-    width: 50%; /* Ajuste para melhor distribuição de espaço */
+    width: 50%;
+    /* Ajuste para melhor distribuição de espaço */
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.valores-text h2 {
-    font-size: 2.9rem;
-}
 
 .valores-text p {
     color: var(--texto_white2);
@@ -489,7 +528,7 @@ h2 {
 
 .valores-text a {
     padding: 12px;
-    background-color: var(--cor2);
+    background-image: linear-gradient(to right, #5783aa, #629bbe);
     color: white;
     border-radius: 10px;
     width: fit-content;
@@ -498,21 +537,27 @@ h2 {
 }
 
 .valores-text a:hover {
-    transform: scale(1.05);
+    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
+    cursor: pointer;
 }
 
 .valores-img {
-    width: 45%; /* Ajuste para melhor distribuição de espaço */
+    width: 45%;
+    /* Ajuste para melhor distribuição de espaço */
 }
 
 .valores-img img {
     width: 100%;
     border-radius: 25px;
+    transition: 0.8s;
+}
+
+.valores-img img:hover {
+    transform: perspective(500px) rotateY(20deg);
 }
 
 
 /*Serviços*/
-
 .services {
     background: radial-gradient(circle, rgba(0, 110, 255, 0.082), transparent);
     padding: 105px;
@@ -535,9 +580,8 @@ h2 {
     opacity: 0.6;
 }
 
-
 .services-content {
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -579,9 +623,9 @@ h2 {
     width: 100%;
 }
 
-.service-card p{
+.service-card p {
     color: var(--texto_white2);
-    text-align: justify;
+    text-align: left;
 }
 
 .service-cards a:hover {
@@ -594,6 +638,8 @@ h2 {
     width: 40px;
 }
 
+
+/*QOS*/
 .qos {
     overflow: hidden;
     padding: 30px;
@@ -636,7 +682,7 @@ h2 {
     /* Garantindo que o conteúdo fique acima do efeito de fundo */
 }
 
-.qos-container p{
+.qos-container p {
     text-align: justify;
     color: var(--texto_white2);
 }
@@ -656,7 +702,7 @@ h2 {
 }
 
 .qos-item {
-    width: 50%;
+    width: 60%;
     opacity: 60%;
     transition: 0.5s;
 }
@@ -682,11 +728,8 @@ h2 {
 
 #qos-item2 {
     position: relative;
+    right: -2.5%;
     width: 60%;
-}
-
-.qos-item img {
-    width: 100%;
 }
 
 .qos-text {
@@ -704,26 +747,25 @@ h2 {
     border-radius: 10px;
 }
 
-
+/*---------------------------------*/
 .trabalhar-conosco-container {
     width: 90%;
     margin: 10% auto;
-    /* Centraliza o título, texto e os cards */
 }
 
 .trabalhar-conosco-container h2 {
-    font-weight: bold;
     margin-bottom: 20px;
-    color: #ffffff;
+    text-align: center;
 }
 
 .work-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Centraliza os itens na linha */
     flex-wrap: wrap;
+    /* Permite quebra de linha */
     max-width: 1200px;
-    margin: 20px auto;
-    gap: 20px;
+    gap: 25px;
 }
 
 .work-card {
@@ -732,6 +774,7 @@ h2 {
     border-radius: 10px;
     box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.445);
     flex: 1 1 200px;
+    /* Tamanho flexível com largura mínima */
     max-width: 250px;
     transition: 0.5s;
     display: flex;
@@ -743,7 +786,6 @@ h2 {
     transform: scale(1.05);
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.041), transparent);
     box-shadow: -1px -1px 1px #52a5d95e;
-    transition: 0.5s;
 }
 
 .work-card h3 {
@@ -937,6 +979,7 @@ h2 {
 
 .seg-high-text p {
     text-align: justify;
+    color: var(--texto_white2);
 }
 
 .seg-high-img {
@@ -945,7 +988,10 @@ h2 {
     text-align: right;
     justify-content: center;
     align-items: center;
-    /* Centraliza a imagem verticalmente */
+}
+
+.seg-high-img:hover {
+    transform: none;
 }
 
 .seg-high-img img {
@@ -954,7 +1000,7 @@ h2 {
     border-radius: 8px;
 }
 
-
+/*---------------------------*/
 .quote-section {
     position: relative;
     width: 90%;
@@ -1023,40 +1069,46 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
+    background-image: linear-gradient(to right, #5783aa, #629bbe);
     transition: 0.3s;
 }
 
 .quote-overlay a:hover {
-    transform: scale(1.05);
     color: white;
-
+    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
 }
 
+/*---------------------------*/
+/* Estilo base para o footer */
 footer {
-    background-color: #333333;
+    background-color: #1f1f2ba4;
     color: #f1f1f1;
     padding: 40px 0;
-    text-align: center;
-    height:90vh;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1280px;
+    flex-direction: row;
+    width: 80%;
     margin: auto;
     text-align: left;
-    margin-top: 20px;
+    gap: 50px;
 }
 
-.footer-container section {
-    flex: 1;
-    padding: 20px;
-    min-width: 200px;
+.logo-socials{
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
 }
 
+.sitemap{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    width: 100%;
+    gap: 10px;
+}
+
+/* Links, serviços e contato */
 .footer-links ul,
 .footer-services ul,
 .footer-contact ul {
@@ -1081,9 +1133,10 @@ footer {
 .footer-links ul li a:hover,
 .footer-services ul li a:hover,
 .footer-contact ul li a:hover {
-    color: #fff;
+    color: #52A5D9;
 }
 
+/* Redes sociais */
 .footer-social ul {
     list-style-type: none;
     padding: 0;
@@ -1097,8 +1150,9 @@ footer {
 }
 
 .footer-social ul li a i {
-    font-size: 32px;
+    font-size: 18px;
     color: #f1f1f1;
+    
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -1107,50 +1161,328 @@ footer {
     color: #52A5D9;
 }
 
+/* Direitos autorais */
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 20px;
-    margin-top: 10%;
-}
-
-.footer-logo {
-    width: 128px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .footer-logo img {
-    width: 100%;
+    width: 98px;
 }
 
-#newsletter{
+#newsletter {
     padding: 10px;
+    width: 90%;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
+.footer-contact li{
+    color: var(--texto_white2);
+}
+
+@media (max-width: 1110px) {
+
+    /*Serviços*/
+    .services {
+        padding: 0px;
+        height: fit-content;
+        padding-bottom: 10%;
+        padding-top: 5%;
     }
 
-    nav ul.show {
+    .services-content {
+        width: 90%;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .qos {
+        padding: 30px 0px;
+    }
+
+    /*QOS*/
+    .qos-text {
+        width: 90%;
+        margin-left: 10%;
+        margin-bottom: 70px;
+        text-align: left;
+    }
+
+    /*--------------------------*/
+    .seg-high {
+        display: block;
+        width: 90%;
+        padding: 25px;
+    }
+
+    .seg-high-text,
+    .seg-high-img {
+        max-width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        text-align: left;
+        /* Remove centralização */
+    }
+
+    .seg-high-img {
+        margin-top: 15px;
+        /* Adiciona um espaço entre o texto e a imagem */
+    }
+    /*---------------------*/
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .logo-socials{
+        gap: 10px;
+        width: fit-content;
+    }
+    
+    .sitemap{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        width: 100%;
+        gap: 10px;
+    }
+
+}
+
+
+@media (max-width: 1097px) {
+    .hero-content {
+        gap: 5px;
+    }
+
+    .hero-image {
+        position: relative;
+        left: 5%;
+        width: 45%;
+    }
+
+    .hero-image img {
+        width: 600px;
+    }
+
+    .hero-text {
+        width: 55%;
+    }
+}
+
+@media (max-width: 974px) {
+    .hero-content {
+        gap: 5px;
+    }
+
+    .hero-image {
+        position: relative;
+        left: 10%;
+        width: 30%;
+    }
+
+    .hero-image img {
+        width: 600px;
+    }
+
+    .hero-text {
+        width: 70%;
+    }
+}
+
+@media (max-width: 875px) {
+
+    .valores {
+        height: fit-content;
+    }
+
+    .valores-container {
+        flex-direction: column-reverse;
+    }
+
+    .valores-text {
+        width: 100%;
+    }
+
+    .valores-img {
+        width: 80%;
+        /* Ajuste para melhor distribuição de espaço */
+    }
+
+    .qos {
+        height: fit-content;
+        padding-bottom: 20%;
+    }
+
+    .qos-images {
         display: flex;
         flex-direction: column;
+        position: relative;
+        /* Necessário para os itens se sobreporem corretamente */
+        align-items: center;
+    }
+
+    .qos-item {
+        width: 90%;
+        transition: transform 0.5s, opacity 0.5s ease;
         position: absolute;
-        top: 100%;
-        left: 0;
+        padding-top: 10%;
+        /* Faz com que os itens se sobreponham */
+    }
+
+    /* Item 1 ficará sobreposto ao item 2 inicialmente */
+    #qos-item1 {
+        position: absolute;
+        /* Sobrepõe o item 2 */
+        z-index: 2;
+        /* Item 1 começa por cima */
+        opacity: 1;
+    }
+
+    #qos-item1:hover {
+        transform: scale(1.05) translateX(20%);
+    }
+
+    /* Item 2 fica por baixo, mas com position: relative */
+    #qos-item2 {
+        position: relative;
+        z-index: 1;
+        /* Item 2 fica por baixo inicialmente */
+        left: 35%;
+        /* Desloca o item 2 um pouco para a direita */
+        opacity: 0.6;
+        width: 90%;
+    }
+
+    /* Quando o mouse passar sobre o item 2, ele sobrepõe o item 1 */
+    #qos-item2:hover {
+        z-index: 3;
+        /* Coloca o item 2 acima do item 1 */
+        transform: scale(1.2) translateX(-20%);
+        opacity: 1;
+    }
+
+
+}
+
+@media (max-width: 700px) {
+
+    .hero {
         width: 100%;
-        background-color: #0c2b27;
+        flex-direction: column-reverse;
+        overflow: hidden;
     }
 
-    .menu-toggle {
+    .hero-content {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         display: block;
+        gap: 0px;
+        overflow: hidden;
+        overflow-x: hidden;
     }
 
-    nav .logo {
-        height: 50px;
+    .hero-text {
+        position: relative;
+        order: 2;
+        z-index: 10;
+        width: 90%;
+        top: 25%;
+        color: white;
+
+        padding: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        overflow-x: hidden;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    #nav-popup.show {
-        display: block;
+
+    .hero-image {
+        opacity: 60%;
+        position: relative;
+
+        width: 100%;
+        z-index: -10;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%) translateX(55%);
     }
 
+    /*---------------------------*/
+    .quote-overlay h2 {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 530px) {
+
+    .hero-image {
+        transform: translateY(-50%) translateX(35%);
+    }
+
+    .valores-img {
+        width: 100%;
+        /* Ajuste para melhor distribuição de espaço */
+    }
+
+    .seg-high-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .seg-high-text,
+    .seg-high-img {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 386px) {
+
+    h2 {
+        font-size: 2.7rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    a {
+        font-size: 0.9rem;
+    }
+
+    .quote-section{
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    footer li a{
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 329px) {
+
+    h2 {
+        font-size: 2.45rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    a {
+        font-size: 0.8rem;
+    }
+
+    #newsletter{
+        width: 85%;
+    }
 
 }

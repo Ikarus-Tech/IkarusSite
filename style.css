@@ -55,41 +55,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Raio de luz no body */
-body::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 80%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(111, 152, 255, 0.226) 15%, transparent 60%);
-    transform: rotate(45deg);
-    opacity: 0.6;
-    pointer-events: none;
-    /* Não interfere nas interações */
-    z-index: 0;
-    /* Fica atrás de todo o conteúdo */
-    animation: light-beam-body 10s ease-in-out infinite;
-}
-
-@keyframes light-beam-body {
-    0% {
-        transform: rotate(45deg) translateX(-10%);
-        opacity: 0.4;
-    }
-
-    50% {
-        transform: rotate(45deg) translateX(10%);
-        opacity: 0.6;
-    }
-
-    100% {
-        transform: rotate(45deg) translateX(-10%);
-        opacity: 0.4;
-    }
-}
-
 ul {
     list-style: none;
     /* Color highlighting when pressed on mobile devices */

@@ -1139,13 +1139,10 @@ footer {
 /* For large devices */
 @media (max-width: 1118px) {
     .container {
-        overflow:hidden ;
+        overflow-x:hidden ;
     }
     
-    /*=============== HEADER ===============*/
-    .header {
-        overflow: hidden;
-    }
+    
 
 }
 

@@ -15,7 +15,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-
+    
 }
 
 /*=============== VARIABLES CSS ===============*/
@@ -105,7 +105,7 @@ main a:hover {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-    max-width: 1120px;
+    width: 82%;
     margin-inline: 1.5rem;
 }
 
@@ -441,16 +441,12 @@ h2 {
     padding: 12px;
     text-decoration: none;
     color: var(--texto_white2);
-    background-image: linear-gradient(to right, #5783aa, #629bbe);
+    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
     border-radius: 10px;
     display: block;
     width: fit-content;
     margin-top: -20px;
     transition: 0.5s;
-}
-
-.hero-text a:hover {
-    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
 }
 
 .hero-text section {
@@ -528,7 +524,7 @@ h2 {
 
 .valores-text a {
     padding: 12px;
-    background-image: linear-gradient(to right, #5783aa, #629bbe);
+    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
     color: white;
     border-radius: 10px;
     width: fit-content;
@@ -537,7 +533,6 @@ h2 {
 }
 
 .valores-text a:hover {
-    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
     cursor: pointer;
 }
 
@@ -1063,20 +1058,16 @@ h2 {
 }
 
 .quote-overlay a {
-    background-color: white;
+    
     color: #ffffff;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-image: linear-gradient(to right, #5783aa, #629bbe);
+    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
     transition: 0.3s;
 }
 
-.quote-overlay a:hover {
-    color: white;
-    background-image: linear-gradient(to right, var(--cor1), var(--cor3));
-}
 
 /*---------------------------*/
 /* Estilo base para o footer */
@@ -1249,6 +1240,11 @@ footer {
         gap: 10px;
     }
 
+    .quote-section{
+        width: 100%;
+        border-radius: 0px;
+    }
+
 }
 
 
@@ -1369,6 +1365,12 @@ footer {
 
 @media (max-width: 700px) {
 
+    /* Raio de luz no body */
+    body::before {
+        animation: none;
+    }
+
+
     .hero {
         width: 100%;
         flex-direction: column-reverse;
@@ -1454,11 +1456,6 @@ footer {
 
     a {
         font-size: 0.9rem;
-    }
-
-    .quote-section{
-        width: 100%;
-        border-radius: 0px;
     }
 
     footer li a{

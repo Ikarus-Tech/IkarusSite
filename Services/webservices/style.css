@@ -36,7 +36,7 @@ hr {
 }
 
 .hero {
-  background-image: url("images/hero_image.jpg");
+  background-image: url("images/hero_image.webp");
   background-size: cover;
   background-position: center;
   height: 90vh;

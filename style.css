@@ -71,7 +71,7 @@ main a:hover {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-    width: 82%;
+    width: 90%;
     margin-inline: 1.5rem;
 }
 
@@ -356,14 +356,6 @@ main a:hover {
         transition: top .3s;
     }
 
-    .container {
-        overflow: hidden;
-    }
-    
-    /*=============== HEADER ===============*/
-    .header {
-        overflow: hidden;
-    }
 }
 
 h2 {
@@ -832,9 +824,6 @@ h2 {
 
 .card:hover::before {
     width: 100%;
-}
-
-.card:hover {
     transform: translateY(10px);
 }
 
@@ -1145,6 +1134,19 @@ footer {
 
 .footer-contact li{
     color: var(--texto_white2);
+}
+
+/* For large devices */
+@media (max-width: 1118px) {
+    .container {
+        overflow:hidden ;
+    }
+    
+    /*=============== HEADER ===============*/
+    .header {
+        overflow: hidden;
+    }
+
 }
 
 @media (max-width: 1110px) {

@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 
 * {
@@ -16,7 +15,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
+
 }
 
 /*=============== VARIABLES CSS ===============*/
@@ -1021,7 +1020,7 @@ h2 {
 }
 
 .quote-overlay a {
-    
+
     color: #ffffff;
     padding: 10px;
     border: none;
@@ -1049,13 +1048,13 @@ footer {
     gap: 50px;
 }
 
-.logo-socials{
+.logo-socials {
     display: flex;
     flex-direction: column;
     gap: 10%;
 }
 
-.sitemap{
+.sitemap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     width: 100%;
@@ -1106,7 +1105,7 @@ footer {
 .footer-social ul li a i {
     font-size: 18px;
     color: #f1f1f1;
-    
+
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -1132,17 +1131,16 @@ footer {
     width: 90%;
 }
 
-.footer-contact li{
+.footer-contact li {
     color: var(--texto_white2);
 }
 
 /* For large devices */
 @media (max-width: 1118px) {
     .container {
-        overflow-x:hidden ;
+        overflow-x: hidden;
     }
-    
-    
+
 
 }
 
@@ -1196,24 +1194,25 @@ footer {
         margin-top: 15px;
         /* Adiciona um espaço entre o texto e a imagem */
     }
+
     /*---------------------*/
     .footer-container {
         flex-direction: column;
     }
-    
-    .logo-socials{
+
+    .logo-socials {
         gap: 10px;
         width: fit-content;
     }
-    
-    .sitemap{
+
+    .sitemap {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         width: 100%;
         gap: 10px;
     }
 
-    .quote-section{
+    .quote-section {
         width: 100%;
         border-radius: 0px;
     }
@@ -1304,35 +1303,19 @@ footer {
     /* Item 1 ficará sobreposto ao item 2 inicialmente */
     #qos-item1 {
         position: absolute;
-        /* Sobrepõe o item 2 */
         z-index: 2;
-        /* Item 1 começa por cima */
         opacity: 1;
+        transition: transform 0.5s, opacity 0.5s ease;
     }
 
-    #qos-item1:hover {
-        transform: scale(1.05) translateX(20%);
-    }
-
-    /* Item 2 fica por baixo, mas com position: relative */
     #qos-item2 {
         position: relative;
         z-index: 1;
-        /* Item 2 fica por baixo inicialmente */
         left: 35%;
-        /* Desloca o item 2 um pouco para a direita */
         opacity: 0.6;
         width: 90%;
+        transition: transform 0.5s, opacity 0.5s ease;
     }
-
-    /* Quando o mouse passar sobre o item 2, ele sobrepõe o item 1 */
-    #qos-item2:hover {
-        z-index: 3;
-        /* Coloca o item 2 acima do item 1 */
-        transform: scale(1.2) translateX(-20%);
-        opacity: 1;
-    }
-
 
 }
 
@@ -1397,7 +1380,7 @@ footer {
     .valores-img img {
         transition: none;
     }
-    
+
     .valores-img img:hover {
         transform: none;
     }
@@ -1405,7 +1388,7 @@ footer {
     .qos::before {
         animation: none;
     }
-    
+
 
 }
 
@@ -1445,7 +1428,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    footer li a{
+    footer li a {
         font-size: 0.9rem;
     }
 
@@ -1465,7 +1448,7 @@ footer {
         font-size: 0.8rem;
     }
 
-    #newsletter{
+    #newsletter {
         width: 85%;
     }
 

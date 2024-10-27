@@ -30,20 +30,51 @@ const showMenu = (toggleId, navId) =>{
  
 showMenu('nav-toggle','nav-menu')
 
-// Seleciona os elementos #qos-item1 e #qos-item2
-const item1 = document.getElementById('qos-item1');
-const item2 = document.getElementById('qos-item2');
+// Seleciona o elemento pai e os itens de imagem
+const qosImages = document.querySelector('.qos-images');
+const qItem1 = document.getElementById('qos-item1');
+const qItem2 = document.getElementById('qos-item2');
 
-// Adiciona o evento de mouseover para o item 2
-item2.addEventListener('mouseover', function() {
-    // Diminui a opacidade do item 1 quando o mouse estiver sobre o item 2
-    item1.style.opacity = '0.4';
+// Variáveis para armazenar a posição inicial e final do toque
+let startX = 0;
+let endX = 0;
+
+// Adiciona o evento touchstart para detectar o início do swipe
+qosImages.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
 });
 
-// Adiciona o evento de mouseout para restaurar a opacidade do item 1
-item2.addEventListener('mouseout', function() {
-    // Restaura a opacidade original do item 1 quando o mouse sair do item 2
-    item1.style.opacity = '1';
+// Adiciona o evento touchmove para rastrear o movimento horizontal
+qosImages.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
 });
+
+// Adiciona o evento touchend para verificar a direção do swipe
+qosImages.addEventListener('touchend', () => {
+    if (startX > endX + 50) {
+        // Drag para a esquerda - `qItem2` passa para cima
+        qItem2.style.zIndex = '3';
+        qItem1.style.zIndex = '1';
+        qItem2.style.transform = 'scale(1.2) translateX(-20%)';
+        qItem2.style.opacity = '1';
+        qItem1.style.transform = 'scale(1) translateX(0)';
+        qItem1.style.opacity = '0.6';
+    } else if (endX > startX + 50) {
+        // Drag para a direita - `qItem1` passa para cima
+        qItem1.style.zIndex = '3';
+        qItem2.style.zIndex = '1';
+        qItem1.style.transform = 'scale(1.2) translateX(20%)';
+        qItem1.style.opacity = '1';
+        qItem2.style.transform = 'scale(1) translateX(-20%)';
+        qItem2.style.opacity = '0.6';
+    }
+
+    // Reseta as posições para o próximo drag
+    startX = 0;
+    endX = 0;
+});
+
+
+
 
 

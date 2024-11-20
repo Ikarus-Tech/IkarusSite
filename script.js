@@ -30,6 +30,23 @@ const showMenu = (toggleId, navId) =>{
  
 showMenu('nav-toggle','nav-menu')
 
+// Função para alternar o menu dropdown
+const dropdownMenus = document.querySelectorAll('.dropdown__item'); // Seleciona todos os itens de menu dropdown
+
+dropdownMenus.forEach(dropdown => {
+    const arrow = dropdown.querySelector('.dropdown__arrow');
+    const menu = dropdown.querySelector('.dropdown__menu');
+
+    dropdown.addEventListener('click', () => {
+        // Alterna a visibilidade do menu
+        menu.classList.toggle('show-dropdown');
+        
+        // Alterna a rotação da seta
+        arrow.classList.toggle('rotate-arrow');
+    });
+});
+
+
 // Seleciona o elemento pai e os itens de imagem
 const qosImages = document.querySelector('.qos-images');
 const qItem1 = document.getElementById('qos-item1');

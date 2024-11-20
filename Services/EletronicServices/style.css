@@ -149,7 +149,6 @@
     color: var(--cor4);
 }
 
-
 /* Show menu */
 .show-menu {
   opacity: 1;
@@ -336,6 +335,7 @@
       transition: top .3s;
   }
 }
+
 
 /*Body e resto*/
 body {

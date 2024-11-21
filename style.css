@@ -281,6 +281,8 @@ main a:hover {
 
 /* For large devices */
 @media screen and (min-width: 1118px) {
+
+    
     .container {
         margin-inline: auto;
     }
@@ -359,9 +361,19 @@ main a:hover {
         pointer-events: initial;
         transition: top .3s;
     }
+
+    .dropdown__item:hover .dropdown__menu {
+        opacity: 1;
+        top: 5.5rem; /* Ajuste conforme necessário */
+        pointer-events: auto;
+        transition: top .3s ease, opacity .3s ease;
+    }
+
+    .dropdown__item:hover .dropdown__arrow {
+        transform: rotate(180deg);
+        transition: transform .3s ease;
+    }
 }
-
-
 
 h2 {
     font-size: 3rem;

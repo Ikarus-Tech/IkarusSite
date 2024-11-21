@@ -30,21 +30,52 @@ const showMenu = (toggleId, navId) =>{
  
 showMenu('nav-toggle','nav-menu')
 
-// Função para alternar o menu dropdown
-const dropdownMenus = document.querySelectorAll('.dropdown__item'); // Seleciona todos os itens de menu dropdown
+const dropdownItems = document.querySelectorAll('.dropdown__item');
 
-dropdownMenus.forEach(dropdown => {
-    const arrow = dropdown.querySelector('.dropdown__arrow');
-    const menu = dropdown.querySelector('.dropdown__menu');
+dropdownItems.forEach(item => {
+    const menu = item.querySelector('.dropdown__menu');
+    const arrow = item.querySelector('.dropdown__arrow');
 
-    dropdown.addEventListener('click', () => {
-        // Alterna a visibilidade do menu
-        menu.classList.toggle('show-dropdown');
-        
-        // Alterna a rotação da seta
-        arrow.classList.toggle('rotate-arrow');
+    // Função para abrir/fechar o menu via clique (apenas em telas pequenas)
+    const toggleDropdown = () => {
+        if (window.innerWidth <= 1118) { // Limite para telas menores
+            const isOpen = menu.classList.contains('show-dropdown');
+            closeAllDropdowns(); // Fecha outros menus
+            if (!isOpen) {
+                menu.classList.add('show-dropdown');
+                arrow.classList.add('rotate-arrow');
+            }
+        }
+    };
+
+    // Fecha todos os dropdowns abertos
+    const closeAllDropdowns = () => {
+        dropdownItems.forEach(el => {
+            el.querySelector('.dropdown__menu').classList.remove('show-dropdown');
+            el.querySelector('.dropdown__arrow').classList.remove('rotate-arrow');
+        });
+    };
+
+    // Clique para abrir/fechar em telas pequenas
+    item.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleDropdown();
     });
+
+    // Hover (CSS gerencia telas maiores, então removemos esta parte no JS)
 });
+
+// Fecha o dropdown ao clicar fora
+document.addEventListener('click', () => {
+    if (window.innerWidth <= 1118) {
+        dropdownItems.forEach(el => {
+            el.querySelector('.dropdown__menu').classList.remove('show-dropdown');
+            el.querySelector('.dropdown__arrow').classList.remove('rotate-arrow');
+        });
+    }
+});
+
+
 
 
 // Seleciona o elemento pai e os itens de imagem

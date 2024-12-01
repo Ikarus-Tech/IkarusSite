@@ -29,7 +29,6 @@ const showMenu = (toggleId, navId) =>{
 }
  
 showMenu('nav-toggle','nav-menu')
-
 const dropdownItems = document.querySelectorAll('.dropdown__item');
 
 dropdownItems.forEach(item => {
@@ -75,9 +74,6 @@ document.addEventListener('click', () => {
     }
 });
 
-
-
-
 // Seleciona o elemento pai e os itens de imagem
 const qosImages = document.querySelector('.qos-images');
 const qItem1 = document.getElementById('qos-item1');
@@ -121,6 +117,7 @@ qosImages.addEventListener('touchend', () => {
     startX = 0;
     endX = 0;
 });
+
 
 
 

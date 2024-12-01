@@ -1,0 +1,264 @@
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    /* Fundo semi-transparente */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Popup Content */
+.popup_content {
+    background: linear-gradient(to bottom, rgb(14, 19, 32), rgb(20, 25, 39));
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90%;
+    /* Limita a altura para caber na tela */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    overflow-y: auto;
+    /* Adiciona scroll vertical */
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    /* Firefox: barra de rolagem fina */
+    scrollbar-color: var(--cor3) rgba(255, 255, 255, 0.1);
+    /* Firefox: cor do scroll */
+}
+
+/* Scroll Custom para Webkit (Chrome, Edge e outros) */
+.popup_content::-webkit-scrollbar {
+    width: 8px;
+    /* Largura da barra */
+}
+
+.popup_content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    /* Fundo do track do scroll */
+    border-radius: 5px;
+}
+
+.popup_content::-webkit-scrollbar-thumb {
+    background: #585858;
+    /* Cor do thumb (rolador) */
+    border-radius: 5px;
+}
+
+.popup_content::-webkit-scrollbar-thumb:hover {
+    background: #707070;
+    /* Cor do thumb quando hover */
+}
+
+/* Outros estilos */
+.popup_content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0px 0px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.popup_content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    /* Define a área do overlay */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0));
+    /* Gradiente escuro que vai desaparecendo */
+    z-index: 2;
+    /* Fica acima da imagem */
+    border-radius: 8px 8px 0 0;
+}
+
+.popup_content .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--texto_white);
+    cursor: pointer;
+    z-index: 3;
+    /* Garante que fique acima do overlay */
+    background: rgba(0, 0, 0, 0.6);
+    /* Fundo escuro semi-transparente para contraste */
+    padding: 5px;
+    border-radius: 1000px;
+}
+
+.popup_text {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.popup_content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.popup_content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    color: var(--texto_white2);
+}
+
+.popup_content a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--texto_white);
+    background: var(--cor1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.popup_content a:hover {
+    background: var(--cor3);
+}
+
+/* Slider principal */
+.slider_container {
+    overflow: hidden;
+    /* Esconde barras de rolagem */
+    width: 100%;
+    position: relative;
+}
+
+/* Extra container with horizontal scrolling */
+.extra_container {
+    display: flex;
+    /* Alinha os cards horizontalmente */
+    gap: 1.5rem;
+    padding: 2rem;
+    overflow-x: auto;
+    /* Habilita rolagem horizontal */
+    scroll-behavior: smooth;
+    /* Rola suavemente */
+    scrollbar-width: none;
+    /* Remove barra de rolagem no Firefox */
+}
+
+.extra_container::-webkit-scrollbar {
+    display: none;
+    /* Remove barra de rolagem no Chrome/Safari */
+}
+
+/* Cards permanecem com o estilo definido */
+.card {
+    flex: 0 0 auto;
+    /* Define largura fixa para os cards no layout flexível */
+    width: 300px;
+    /* Mantém o tamanho dos cards consistente */
+    position: relative;
+    background: var(--cor2);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+.card .image {
+    position: relative;
+}
+
+.card .image img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+}
+
+.card .image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    /* Gradiente cobre a parte inferior */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+    font-size: 1.2rem;
+    color: var(--texto_white);
+    font-weight: 500;
+    z-index: 2;
+    /* Para ficar acima do overlay */
+}
+
+/* Botão de ação (+) */
+.card::after {
+    content: "+";
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--texto_white);
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 2;
+    /* Para ficar acima do overlay */
+    transition: background-color 0.3s ease;
+}
+
+.card:hover::after {
+    background: var(--cor3);
+}
+
+/* Barra de rolagem estilizada */
+.slider_container::-webkit-scrollbar {
+    height: 8px;
+    /* Altura da barra de rolagem */
+}
+
+.slider_container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.slider_container::-webkit-scrollbar-thumb {
+    background: var(--cor3);
+    border-radius: 4px;
+}
+
+.slider_container::-webkit-scrollbar-thumb:hover {
+    background: var(--cor1);
+}
+

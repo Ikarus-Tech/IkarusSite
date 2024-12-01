@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Segurança_Eletrónica-IkarusTech</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../popup_sliders.css">
+  <link rel="stylesheet" href="../../popup.css">
   <link rel="shortcut icon" href="../../Media/Images/Icones/IKT-favicon 64x64.png" type="image/x-icon" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
   <script src="../../script.js" defer></script>
+  <script src="script.js" defer></script>
   <meta name="description"
     content="Oferecemos segurança eletrônica com câmeras e alarmes. Confie na Ikarus Tech para proteger seu patrimônio.">
   <meta name="keywords" content="Segurança eletrônica, câmeras de segurança, alarmes, monitoramento, proteção">
@@ -210,7 +213,7 @@
         <h3>Kit de 32 Cameras</h3>
         <div class="price">
           <p>A partir de</p>
-          <span class="package_price">19 999MZN</span>
+          <span class="package_price">119 999MZN</span>
         </div>
         <p style="font-size: 0.9rem; margin-top: 1rem; margin-bottom: -1rem">
           Definitivo para grandes espaços, com alta qualidade e amplo armazenamento.
@@ -232,12 +235,71 @@
           </li>
         </ul>
       </div>
-
     </section>
 
+    <section class="other">
+      <section class="custom_kits">
+        <div class="custom_kits_text">
+          <h2>Deseja um kit personalizado?</h2>
+          <p>Peça um kit à sua escolha, desenvolvido sob medida para atender às suas necessidades específicas de
+            segurança.</p>
+          <div class="buttons">
+            <a href="#" class="btn">Falar conosco</a>
+          </div>
+        </div>
+      </section>
+      <div class="slider_container">
+        <section class="extra_container">
+          <section class="access_control card" data-title="Controle de Acesso"
+            data-description="Monitore e gerencie quem entra e sai do seu espaço com soluções avançadas de controle de acesso. Oferecemos sistemas modernos e integrados que permitem rastrear, autorizar e registrar o acesso, proporcionando maior segurança e eficiência para empresas e residências."
+            data-link="#">
+            <div class="image">
+              <img src="../../Media/Images/access_control.jpg" alt="Controle de Acesso">
+            </div>
+            <h3>Controle de Acesso</h3>
+          </section>
+
+          <section class="alarm_installation card" data-title="Instalação de Alarmes Residenciais e Comerciais"
+            data-description="Proteja sua casa ou negócio com sistemas de alarme modernos e confiáveis, projetados para sua tranquilidade. Nossa equipe especializada garante uma instalação segura, além de suporte técnico para monitoramento remoto, garantindo proteção contínua e personalizada."
+            data-link="#">
+            <div class="image">
+              <img src="../../Media/Images/instrusion_alarm.png" alt="Instalação de Alarmes">
+            </div>
+            <h3>Instalação de Alarmes</h3>
+          </section>
+
+          <section class="automatic_gates card" data-title="Instalação de Portões Automáticos"
+            data-description="Automatize o acesso ao seu espaço com portões automáticos de alta qualidade e durabilidade. Nossos serviços incluem a instalação de sistemas motorizados confiáveis e com design adaptável, garantindo conveniência e segurança, ideais para residências e comércios."
+            data-link="#">
+            <div class="image">
+              <img src="../../Media/Images/automatic_gate.webp" alt="Instalação de Portões Automáticos">
+            </div>
+            <h3>Portões Automáticos</h3>
+          </section>
+
+          <section class="electric_fences card" data-title="Instalação de Cercas Elétricas"
+            data-description="Adicione uma camada extra de proteção com cercas elétricas confiáveis e eficientes. Nosso serviço abrange a instalação de cercas energizadas de última geração, ideais para residências, fazendas e empresas, assegurando proteção máxima contra intrusos."
+            data-link="#">
+            <div class="image">
+              <img src="../../Media/Images/cerca.webp" alt="Instalação de Cercas Elétricas">
+            </div>
+            <h3>Cercas Elétricas</h3>
+          </section>
+        </section>
+      </div>
+      <div class="popup" id="popup">
+        <div class="popup_content">
+          <span class="close">&times;</span>
+          <img id="popup_image" src="" alt="Detalhe da imagem" />
+          <div class="popup_text">
+            <h3 id="popup_title"></h3>
+            <p id="popup_description"></p>
+            <a href="#" id="popup_link" class="btn">Fale conosco</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-
   <footer>
     <section class="footer-container">
       <section class="logo-socials">

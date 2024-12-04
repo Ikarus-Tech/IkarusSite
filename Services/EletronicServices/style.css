@@ -590,6 +590,23 @@ hr {
   .service_description {
     margin-top: 20%;
   }
+  .contact_us h2 {
+    font-size: 2rem;
+  }
+
+  .contact_us p {
+    font-size: 1rem;
+  }
+
+  .contact_us .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact_us .contact_btn,
+  .contact_us .quote_btn {
+    width: 100%;
+  }
 }
 
 /*Footer-----------------------*/
@@ -751,12 +768,7 @@ footer {
     font-size: 2.3rem;
   }
 
-  .contact_us .buttons{
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 0 auto;
-  }
+  
 }
 @media (max-width: 386px) {
   .service_description {position: relative;top: 5%;}
@@ -766,5 +778,8 @@ footer {
   p {font-size: 0.9rem;}
   a {font-size: 0.9rem;}
   footer li a {font-size: 0.9rem;}
+  .contact_us h2 {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 329px) {#newsletter {width: 85%;}}

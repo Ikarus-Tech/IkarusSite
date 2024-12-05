@@ -351,6 +351,7 @@ hr {
   position: relative;
   z-index: 1;
   color: var(--texto_white2);
+  text-align: justify;
 }
 
 .popup_content a {

@@ -142,9 +142,31 @@ hr {
 }
 
 .price {
-  background: linear-gradient(to right, transparent, #5bb5d98e);
+  text-align: left;
+  background: linear-gradient(to right, #5bb5d98e,transparent);
+  border-radius: 10px;
   padding: 10px;
-  border-radius: 10px 10px 10px 10px;
+  display: flex;
+}
+
+.price_main {
+  font-size: 3.5rem; /* Tamanho grande para o número principal */
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.price_unit {
+  font-size: 1rem; /* Tamanho médio para "MT" */
+  margin-left: 2px;
+  display: flex;
+  flex-direction: column; 
+  margin-top: 2.2%;
+}
+
+.price_month {
+  font-size: 1rem; /* Tamanho menor para "/mês" */
+  color: rgba(255, 255, 255, 0.8); /* Cor mais clara */
+  font-weight: normal;
 }
 
 .package_price {

@@ -652,7 +652,7 @@ footer {
     padding: 2.8rem;
   }
   .hero_image img {
-    max-width: 100%;
+    max-width: 900px;
   }
   .service_description {
     width: 100%;

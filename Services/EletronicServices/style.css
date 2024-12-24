@@ -792,6 +792,9 @@ footer {
     font-size: 2.3rem;
   }
 
+  .packages h2 {
+    font-size: 2.4rem;
+  }
   
 }
 @media (max-width: 386px) {

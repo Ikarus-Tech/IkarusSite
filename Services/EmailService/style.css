@@ -718,6 +718,9 @@ footer {
     text-align: left;
   }
 
+  .packages h2 {
+    font-size: 2.4rem;
+  }
 
   .hero h1 {
     font-size: 2.4rem;
@@ -764,6 +767,10 @@ footer {
   }
 
   .text h2 {
+    font-size: 2rem;
+  }
+
+  .packages h2 {
     font-size: 2rem;
   }
 

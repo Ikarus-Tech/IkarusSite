@@ -576,10 +576,6 @@ footer {
     margin-bottom: -12%;
   }
 
-  .hero_image img {
-    max-width: 600px;
-  }
-
   .container {
     overflow-x: hidden;
   }
@@ -651,9 +647,6 @@ footer {
     width: 100%;
     padding: 2.8rem;
   }
-  .hero_image img {
-    max-width: 900px;
-  }
   .service_description {
     width: 100%;
   }
@@ -673,6 +666,9 @@ footer {
     text-align: left;
   }
 
+  .packages h2 {
+    font-size: 2.4rem;
+  }
 
   .hero h1 {
     font-size: 2.4rem;
@@ -718,6 +714,9 @@ footer {
     font-size: 2rem;
   }
 
+  .packages h2 {
+    font-size: 2rem;
+  }
   .text h2 {
     font-size: 2rem;
   }

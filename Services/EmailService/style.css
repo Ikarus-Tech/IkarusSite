@@ -705,10 +705,6 @@ footer {
 }
 
 @media (max-width: 490px) {
-  .hero {
-    height: 100vh;
-  }
-
   .high_performance_systems .text_section h2 {
     font-size: 2.3rem;
   }

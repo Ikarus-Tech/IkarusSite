@@ -161,6 +161,7 @@ hr {
   display: flex;
   flex-direction: column; 
   margin-top: 2.2%;
+  font-weight: bold;
 }
 
 .price_month {

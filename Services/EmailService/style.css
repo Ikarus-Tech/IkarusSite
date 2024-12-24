@@ -23,6 +23,7 @@ hr {
 .service_description {
   flex: 1;
   text-align: left;
+
 }
 
 .service_description h1 {
@@ -31,6 +32,7 @@ hr {
 
 .service_description p {
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .hero_image {
@@ -604,14 +606,24 @@ footer {
   color: white;
 }
 
-@media (max-width: 1280px) {
-  .service_description {
-    margin-top: 25%;
-    width: 70%;
-  }
-}
 
 @media (max-width: 1110px) {
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .service_description {
+    width: 90%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -12%;
+  }
+
+  .hero_image img {
+    max-width: 90%;
+  }
 
   .container {
     overflow-x: hidden;
@@ -638,10 +650,6 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
 
-  .hero {
-    background-image: url('../../Media/Images/mobileMedium.png');
-  }
-
   .hero-content {
     width: 100%;
   }
@@ -656,7 +664,7 @@ footer {
 
   .service_description {
     width: 90%;
-    margin-top: 30%;
+    margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -684,6 +692,16 @@ footer {
   .systems .text {
     width: 100%;
   }
+  .hero{
+    width: 100%;
+    padding: 2.8rem;
+  }
+  .hero_image img {
+    max-width: 100%;
+  }
+  .service_description {
+    width: 100%;
+  }
 }
 
 @media (max-width: 490px) {
@@ -705,7 +723,7 @@ footer {
   }
 
   .service_description {
-    margin-top: 40%;
+    margin-top: 30%;
   }
 
   .hero h1 {

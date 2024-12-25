@@ -33,6 +33,7 @@ hr {
 .service_description p {
     margin-bottom: 1.5rem;
     text-align: justify;
+    color: var(--texto_white);
 }
 
 .hero_image {

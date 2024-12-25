@@ -34,7 +34,7 @@
     gap: 10px;
 }
 
-.hero-text h2 {
+.hero-text h1 {
     text-align: left;
 }
 
@@ -839,8 +839,6 @@ footer {
     .container {
         overflow-x: hidden;
     }
-
-
 }
 
 @media (max-width: 1110px) {
@@ -1115,7 +1113,7 @@ footer {
 
 @media (max-width: 386px) {
 
-    h2 {
+    h2, h1 {
         font-size: 2.7rem;
     }
 
@@ -1135,7 +1133,7 @@ footer {
 
 @media (max-width: 329px) {
 
-    h2 {
+    h2, h1 {
         font-size: 2.45rem;
     }
 

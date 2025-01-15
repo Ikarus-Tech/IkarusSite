@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../../Media/Images/Icones/IKT-favicon 64x64.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="../script.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <title>Pedir Cotação ou Agendar Chamada - Ikarus Tech</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="../nav_and_general.css">
+  <link rel="shortcut icon" href="../Media/Images/Icones/IKT-favicon 64x64.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a href="../index.html" class="nav__logo">
+          <img src="../Media/Images/IKARUS TECH_023734/Logo Site.png" alt="Logotipo da Ikarus">
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Home</a></li>
+
+          <!--=============== DROPDOWN 1 ===============-->
+          <li class="dropdown__item">
+            <div class="nav__link">
+              Serviços <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+
+            <ul class="dropdown__menu">
+              <li>
+                <a href="../Services/desenvolvimento-web/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/website.png" alt="Desenvolvimento de Websites"
+                    class="dropdown__icon">
+                  Desenvolvimento de Websites e Webapps
+                </a>
+              </li>
+              <li>
+                <a href="../Services/desenvolvimento-desktop/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/aplicativo-de-desktop.png" alt="Aplicativos Desktop"
+                    class="dropdown__icon"> Aplicativos Desktop
+                </a>
+              </li>
+              <li>
+                <a href="../Services/desenvolvimento-mobile/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/aplicativo-movel (1).png" alt="Aplicativos Mobile"
+                    class="dropdown__icon"> Aplicativos Mobile
+                </a>
+              </li>
+              <li>
+                <a href="../Services/automacao-residencial/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/automacao-residencial (1).png" alt="Automação Residencial"
+                    class="dropdown__icon"> Automação Residencial
+                </a>
+              </li>
+              <li>
+                <a href="../Services/seguranca-eletronica/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/camera-de-seguranca (2).png" alt="Segurança Eletrônica"
+                    class="dropdown__icon"> Segurança Eletrônica
+                </a>
+              </li>
+              <li>
+                <a href="../Services/hospedagem/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/computacao-em-nuvem.png" alt="Hospedagem de Websites"
+                    class="dropdown__icon"> Hospedagem de Websites
+                </a>
+              </li>
+              <li>
+                <a href="../Services/email-corporativo/index.html" class="dropdown__link">
+                  <img src="../Media/Images/Icones/o-email (1).png" alt="Criação de Emails Corporativos"
+                    class="dropdown__icon"> Criação de Emails
+                  Corporativos
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="../aboutus.html" class="nav__link">Sobre-Nos</a></li>
+        </ul>
+      </div>
+      <div class="nav__menu">
+        <a href="#callSection" class="nav__link" id="nav-call">Agendar Chamada</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main container">
+    <h1>Pedido de <span style="color: #52A5D9;">cotação</span></h1>
+    <p>
+      Por favor preencha o formulário, insira os seus dados. Para mais
+      informações irá ser contactado pela nossa equipe assim que possível.
+    </p>
+    <!-- Formulário de Cotação -->
+    <form id="quotationForm" action="https://formsubmit.co/ikarustech48@gmail.com" method="POST">
+      <div class="form-group" id="select-quote">
+        <select name="service" id="service">
+          <option value="..." selected disabled>Seviço</option>
+          <option value="desktop-apps">Desenvolvimento de Aplicativos Desktop</option>
+          <option value="mobile-apps">Desenvolvimento de Aplicativos Mobile</option>
+          <option value="websites">Desenvolvimento de Websites e Webapps</option>
+          <option value="seguranca-eletronica">Segurança Electrônica</option>
+          <option value="automation">Automação Residêncial</option>
+          <option value="hosting">Hospedagem de Websites</option>
+          <option value="emails">Criação de Emails Corporativos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="name" id="name" placeholder="Nome *" />
+      </div>
+
+      <div class="form-group-row">
+        <input type="email" name="email" id="email" placeholder="Email *" />
+        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Telefone *" />
+      </div>
+
+      <div class="form-group">
+        <textarea name="requestDescription" id="requestDescription" rows="6" cols="50"
+          placeholder="Descreva o seu pedido..."></textarea>
+      </div>
+
+      <button type="submit" class="submitBtn">Enviar</button>
+
+      <input type="hidden" name="_subject" value="Novo pedido de cotação" />
+      <input type="text" name="_honey" style="display: none" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="requestReceived.html" />
+    </form>
+
+    <hr />
+
+    <div id="callSection">
+      <h1>Agende uma chamada <span>connosco</span></h1>
+      <!-- Formulário de Agendamento de Chamada -->
+      <form id="callForm" action="https://formsubmit.co/ikarustech48@gmail.com" method="POST">
+        <div class="form-group" id="select-call">
+          <select name="service-call" id="service-call">
+            <option value="..." selected disabled>Seviço</option>
+            <option value="desktop-apps">Desenvolvimento de Aplicativos Desktop</option>
+            <option value="mobile-apps">Desenvolvimento de Aplicativos Mobile</option>
+            <option value="websites">Desenvolvimento de Websites e Webapps</option>
+            <option value="seguranca-eletronica">Segurança Electrônica</option>
+            <option value="automation">Automação Residêncial</option>
+            <option value="hosting">Hospedagem de Websites</option>
+            <option value="emails">Criação de Emails Corporativos</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="name-call" id="name-call" placeholder="Nome *" />
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phoneNumber-call" id="phoneNumber-call" placeholder="Telefone *" />
+        </div>
+        <div class="form-group">
+          <textarea name="requestDescription-call" id="requestDescription-call" rows="6" cols="50"
+            placeholder="Descreva o seu pedido..."></textarea>
+        </div>
+        <button type="submit" class="submitBtn">Agendar</button>
+        <input type="hidden" name="_subject" value="Novo agendamento de chamada" />
+        <input type="text" name="_honey" style="display: none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="requestReceived.html" />
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <section class="footer-container">
+      <section class="logo-socials">
+        <!-- Links Rápidos -->
+        <section class="footer-logo">
+          <img src="../Media/Images/IKARUS TECH_023734/fosco.png" alt="">
+        </section>
+        <!-- Redes Sociais -->
+        <section class="footer-social">
+          <ul class="social-icons">
+            <li>
+              <a href="https://www.facebook.com/share/fBBLhctU7K9ieTPA/?mibextid=LQQJ4d" target="_blank">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/IkarusTech_?t=Ffnu1POWFOG_fBBSnCtMKg&s=08" target="_blank">
+                <i class="bi bi-twitter-x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/ikarustech/" target="_blank">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/ikarustech_?igsh=cmFyYWExa3p4YWM%3D&utm_source=qr" target="_blank">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section class="sitemap">
+        <section class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../aboutus.html">Sobre-nos</a></li>
+          </ul>
+        </section>
+        <!-- Serviços -->
+        <section class="footer-services">
+          <h3>Nossos Serviços</h3>
+          <ul>
+            <li><a href="../Services/desenvolvimento-desktop/index.html">Desenvolvimento de Aplicativos Desktop</a></li>
+            <li><a href="../Services/desenvolvimento-mobile/index.html">Desenvolvimento de Aplicativos Mobile</a></li>
+            <li><a href="../Services/desenvolvimento-web/index.html">Desenvolvimento de Websites e Webapps</a></li>
+            <li><a href="../Services/seguranca-eletronica/index.html">Segurança Eletrônica</a></li>
+            <li><a href="../Services/automacao-residencial/index.html">Automação Residencial</a></li>
+          </ul>
+        </section>
+        <!-- Contato -->
+        <section class="footer-contact">
+          <h3>Contactos</h3>
+          <ul>
+            <li>Email: <a href="mailto:geral@ikarustech.co.mz">geral@ikarustech.co.mz</a></li>
+            <li>Telefone: <a href="tel:+258848117638">+258 84 811 7638</a></li>
+            <li>Bairro central, Predio fonte Azul, 3 Andar porta 7, Cidade de Maputo, Moçambique</li>
+          </ul>
+          <label for="newsletter">Newsletter</label>
+          <input type="text" name="newsletter" id="newsletter" placeholder="Seu Email">
+          <button id="submit-newsletter">Inscrever-se</button>
+        </section>
+      </section>
+
+    </section>
+
+    <!-- Direitos Autorais -->
+    <section class="footer-bottom">
+      <p>&copy; Todos direitos reservados a Ikarus Tech, Lda.
+    </section>
+  </footer>
+  <!-- Script de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
+  <script>
+    function handleFormSubmit(formId) {
+      const form = document.getElementById(formId);
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Impede o envio do formulário para fins de demonstração
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "Processando...";
+  
+        fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+        })
+          .then(() => {
+            window.location.href = form.querySelector('input[name="_next"]').value;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            submitButton.disabled = false;
+            submitButton.textContent = "Enviar";
+          });
+      });
+    }
+  
+    // Inicializar o script para ambos os formulários
+    handleFormSubmit("quotationForm");
+    handleFormSubmit("callForm");
+  </script>  
+</body>
+
+</html>

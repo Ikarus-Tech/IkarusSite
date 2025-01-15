@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: #fff;
+}
+
+:root {
+  --background-color: #1b1f2b;
+  --border-color: #52a5d9;
+  --left-gradient: #256daa;
+  --right-gradient: #4fa1d6;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.vibrate {
+  display: inline-block;
+  animation: vibrate 0.99s linear infinite;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

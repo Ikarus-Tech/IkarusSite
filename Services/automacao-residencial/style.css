@@ -16,7 +16,7 @@ hr {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-image: url('../../Media/Images/automacao_.jpg');
+  background-image: url('../../Media/Images/automacao_.webp');
 }
 
 .hero::before {

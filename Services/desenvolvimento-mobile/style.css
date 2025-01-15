@@ -16,7 +16,7 @@ hr {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-image: url('../../Media/Images/mobile.png');
+  background-image: url('../../Media/Images/mobile.webp');
 }
 
 .hero::before {
@@ -510,7 +510,7 @@ footer {
 @media (max-width: 768px) {
 
   .hero{
-    background-image: url('../../Media/Images/mobileMedium.png');
+    background-image: url('../../Media/Images/mobileMedium.webp');
   }
 
   .hero-content{

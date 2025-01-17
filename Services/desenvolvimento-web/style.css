@@ -16,7 +16,7 @@ hr {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-image: url('../../Media/Images/web_dev_large.png');
+  background-image: url('../../Media/Images/web_dev_large.webp');
 }
 
 .hero::before {

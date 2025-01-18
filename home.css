@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+/* Hero Section*/
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.hero-content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    /* Alinha o texto e a imagem verticalmente */
+    justify-content: space-between;
+}
 
 .hero-text {
     width: 45%;

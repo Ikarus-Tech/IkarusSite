@@ -799,16 +799,49 @@ footer {
   }
   
 }
-@media (max-width: 386px) {
-  .service_description {position: relative;top: 5%;}
-  .hero {height: 100vh;}
-  h2 {font-size: 2.7rem;}
-  .custom_kits h2{font-size: 2rem;}
-  p {font-size: 0.9rem;}
-  a {font-size: 0.9rem;}
-  footer li a {font-size: 0.9rem;}
+@media (max-width: 484px) {
+  .container h2{
+    font-size: 1.8rem;
+  }
+
+  .systems .text h2{
+    font-size: 1.8rem;
+  }
+
+  .service_description {
+    margin-top: 60%;
+  }
+
+  .hero h1{
+    font-size: 1.8rem;
+  }
+
+  h2{
+    font-size: 1.8rem;
+  }
+
+  .text h2 {
+    font-size: 1.8rem;
+  }
+
   .contact_us h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .high_performance_systems .text_section h2{
+    font-size: 1.8rem;
+  }
+
+  .price_main{
+    font-size: 2.3rem;
+  }
+
+  .price_month, .price_unit{
+    font-size: 0.7rem;
+  }
+
+  .packages h2 {
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 329px) {#newsletter {width: 85%;}}

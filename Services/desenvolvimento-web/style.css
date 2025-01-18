@@ -529,10 +529,6 @@ footer {
 }
 
 @media (max-width: 490px) {
-  .hero {
-    height: 100vh;
-  }
-
   .service_description {
     margin-top: 40%;
   }
@@ -567,22 +563,46 @@ footer {
 }
 
 
-@media (max-width: 386px) {
+@media (max-width: 484px) {
+
+  .systems .text h2{
+    font-size: 1.8rem;
+  }
 
   .service_description {
     margin-top: 60%;
   }
 
   .hero h1{
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  h2{
+    font-size: 1.8rem;
   }
 
   .text h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .contact_us h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .high_performance_systems .text_section h2{
+    font-size: 1.8rem;
+  }
+
+  .price_main{
+    font-size: 2.3rem;
+  }
+
+  .price_month, .price_unit{
+    font-size: 0.7rem;
+  }
+
+  .packages h2 {
+    font-size: 1.8rem;
   }
 }
 

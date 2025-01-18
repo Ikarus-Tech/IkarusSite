@@ -26,7 +26,7 @@ hr {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #1d212aee, #1d212aee, transparent), linear-gradient(to bottom, #1d212aee, transparent);
+  background: linear-gradient(to right, #1d212aee, #1d212af8, transparent), linear-gradient(to bottom, #1d212aee, transparent);
   z-index: 1;
 }
 
@@ -51,7 +51,7 @@ hr {
   width: 50%;
   margin-left: 2rem;
   padding-bottom: 8rem;
- 
+
 }
 
 .service_description h1 {
@@ -485,7 +485,7 @@ footer {
 }
 
 @media (max-width: 1110px) {
-  
+
   .container {
     overflow-x: hidden;
   }
@@ -511,15 +511,15 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
 
-  .hero-content{
-   width: 100%;
-  }
-
-  .systems .container{
+  .hero-content {
     width: 100%;
   }
 
-  .systems .text{
+  .systems .container {
+    width: 100%;
+  }
+
+  .systems .text {
     width: 95%;
   }
 
@@ -550,26 +550,26 @@ footer {
 }
 
 @media (max-width: 531px) {
-  .systems .text{
+  
+  
+
+  .systems .text {
     width: 100%;
   }
 }
 
 @media (max-width: 490px) {
-  .hero {
-    height: 100vh;
-  }
-
-  .high_performance_systems .text_section h2{
+ 
+  .high_performance_systems .text_section h2 {
     font-size: 2.3rem;
   }
 
-  .systems{
+  .systems {
     width: 100%;
     padding: 1.2rem;
   }
 
-  .systems .text{
+  .systems .text {
     text-align: left;
   }
 
@@ -577,7 +577,7 @@ footer {
     margin-top: 40%;
   }
 
-  .hero h1{
+  .hero h1 {
     font-size: 2.4rem;
   }
 
@@ -585,7 +585,7 @@ footer {
     font-size: 2.4rem;
   }
 
-  .high_performance .text{
+  .high_performance .text {
     width: 95%;
   }
 
@@ -618,21 +618,26 @@ footer {
   }
 
   .hero h1{
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  h2{
+    font-size: 1.8rem;
   }
 
   .text h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .contact_us h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .high_performance_systems .text_section h2{
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
+
 
 @media (max-width: 329px) {
   #newsletter {

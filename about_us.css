@@ -428,17 +428,17 @@ footer {
     }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 550px) {
     .mission_vision_values .text h2 {
-        font-size: 2.3rem;
+        font-size: 1.8rem;
     }
 
     .hero h1 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
     }
 
     .text h2 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
     }
 
     .mission_vision_values .text {
@@ -470,19 +470,19 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .text h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .contact_us h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .mission_vision_values .text_section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
 

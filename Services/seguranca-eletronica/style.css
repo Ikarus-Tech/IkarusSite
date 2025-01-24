@@ -787,19 +787,20 @@ footer {
   }
 
 }
-@media (max-width: 430px) {
-  .custom_kits h2{font-size: 2.4rem;
+@media (max-width: 550px) {
+  .service_description{
+    width: 98%;
+  }
+  .custom_kits h2{font-size: 1.8rem;
   }
   .package_price{
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 
   .packages h2 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
   
-}
-@media (max-width: 484px) {
   .container h2{
     font-size: 1.8rem;
   }

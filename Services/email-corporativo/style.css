@@ -705,55 +705,7 @@ footer {
   }
 }
 
-@media (max-width: 490px) {
-  .high_performance_systems .text_section h2 {
-    font-size: 2.3rem;
-  }
-
-  .systems {
-    width: 100%;
-    padding: 1.2rem;
-  }
-
-  .systems .text {
-    text-align: left;
-  }
-
-  .packages h2 {
-    font-size: 2.4rem;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .text h2 {
-    font-size: 2.4rem;
-  }
-
-  .high_performance .text {
-    width: 95%;
-  }
-
-  .custom_kits h2 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  a {
-    font-size: 0.9rem;
-  }
-
-  footer li a {
-    font-size: 0.9rem;
-  }
-}
-
-
-@media (max-width: 484px) {
+@media (max-width: 550px) {
 
   .systems .text h2{
     font-size: 1.8rem;
@@ -793,6 +745,30 @@ footer {
 
   .packages h2 {
     font-size: 1.8rem;
+  }
+
+  .service_description {
+    margin-top: 40%;
+  }
+  
+  .high_performance .text{
+    width: 95%;
+  }
+
+  .custom_kits h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+
+  footer li a {
+    font-size: 0.9rem;
   }
 }
 

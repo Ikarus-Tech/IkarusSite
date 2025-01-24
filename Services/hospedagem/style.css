@@ -607,9 +607,6 @@ footer {
     width: 100%;
   }
 
-  
-  
-
   .systems .container {
     width: 100%;
   }
@@ -619,7 +616,7 @@ footer {
   }
 
   .service_description {
-    width: 90%;
+    width: 95%;
     margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
@@ -657,55 +654,18 @@ footer {
   }
 }
 
-@media (max-width: 490px) {
-  .high_performance_systems .text_section h2 {
-    font-size: 2.3rem;
-  }
+@media (max-width: 550px) {
 
-  .systems {
-    width: 100%;
-    padding: 1.2rem;
+  .custom_kits h2{font-size: 1.8rem;
   }
-
-  .systems .text {
-    text-align: left;
+  .package_price{
+    font-size: 1.8rem;
   }
 
   .packages h2 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
-
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .text h2 {
-    font-size: 2.4rem;
-  }
-
-  .high_performance .text {
-    width: 95%;
-  }
-
-  .custom_kits h2 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  a {
-    font-size: 0.9rem;
-  }
-
-  footer li a {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 386px) {
-
+  
   .container h2{
     font-size: 1.8rem;
   }

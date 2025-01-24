@@ -188,7 +188,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
+
 }
 
 .service-cards {
@@ -533,7 +533,6 @@
     transform: translate(-50%, -30%);
     /* Apenas sobe a imagem sem rotacionar */
 }
-
 
 /*--------------------------*/
 .seg-high {
@@ -1089,6 +1088,45 @@ footer {
 
 }
 
+@media (max-width: 550px) {
+
+    .hero-text h1{
+        font-size: 1.8rem;
+    }
+
+    .valores-text h2{
+        font-size: 1.8rem;
+    }
+    .services-content h2{
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .qos-text h2{
+        font-size: 1.8rem;
+    }
+    .trabalhar-conosco-container h2{
+        font-size: 1.8rem;
+    }
+    .characteristics-container h2{
+        font-size: 1.8rem;
+    }
+    .seg-high-text h2{
+        font-size: 1.8rem;
+    }
+    .quote-text h2{
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    a {
+        font-size: 0.9rem;
+    }
+
+}
+
 @media (max-width: 530px) {
 
     .hero-image {
@@ -1101,7 +1139,7 @@ footer {
     }
 
     .seg-high-text h2 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 
     .seg-high-text,
@@ -1113,8 +1151,9 @@ footer {
 
 @media (max-width: 386px) {
 
-    h2, h1 {
-        font-size: 2.7rem;
+    h2,
+    h1 {
+        font-size: 1.8rem;
     }
 
     p {
@@ -1133,8 +1172,9 @@ footer {
 
 @media (max-width: 329px) {
 
-    h2, h1 {
-        font-size: 2.45rem;
+    h2,
+    h1 {
+        font-size: 1.8rem;
     }
 
     p {

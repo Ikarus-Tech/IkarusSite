@@ -484,7 +484,7 @@ footer {
 }
 
 @media (max-width: 1110px) {
-  
+
   .container {
     overflow-x: hidden;
   }
@@ -510,15 +510,15 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
 
-  .hero-content{
-   width: 100%;
-  }
-
-  .systems .container{
+  .hero-content {
     width: 100%;
   }
 
-  .systems .text{
+  .systems .container {
+    width: 100%;
+  }
+
+  .systems .text {
     width: 95%;
   }
 
@@ -549,48 +549,64 @@ footer {
 }
 
 @media (max-width: 531px) {
-  .systems .text{
+  .systems .text {
     width: 100%;
   }
 }
 
-@media (max-width: 490px) {
-  
-  .service_description {
-    width: 100%;
+@media (max-width: 550px) {
+
+  .systems .text h2 {
+    font-size: 1.8rem;
   }
 
-  .high_performance_systems .text_section h2{
+  .service_description {
+    margin-top: 60%;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .text h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact_us h2 {
+    font-size: 1.8rem;
+  }
+
+  .high_performance_systems .text_section h2 {
+    font-size: 1.8rem;
+  }
+
+  .price_main {
     font-size: 2.3rem;
   }
 
-  .systems{
-    width: 100%;
-    padding: 1.2rem;
+  .price_month,
+  .price_unit {
+    font-size: 0.7rem;
   }
 
-  .systems .text{
-    text-align: left;
+  .packages h2 {
+    font-size: 1.8rem;
   }
 
   .service_description {
     margin-top: 40%;
   }
 
-  .hero h1{
-    font-size: 2.4rem;
-  }
-
-  .text h2 {
-    font-size: 2.4rem;
-  }
-
-  .high_performance .text{
+  .high_performance .text {
     width: 95%;
   }
 
   .custom_kits h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   p {
@@ -604,38 +620,7 @@ footer {
   footer li a {
     font-size: 0.9rem;
   }
-}
 
-
-@media (max-width: 386px) {
-
-  .systems .text h2{
-    font-size: 1.8rem;
-  }
-
-  .service_description {
-    margin-top: 60%;
-  }
-
-  .hero h1{
-    font-size: 1.8rem;
-  }
-
-  h2{
-    font-size: 1.8rem;
-  }
-
-  .text h2 {
-    font-size: 1.8rem;
-  }
-
-  .contact_us h2 {
-    font-size: 1.8rem;
-  }
-
-  .high_performance_systems .text_section h2{
-    font-size: 1.8rem;
-  }
 }
 
 @media (max-width: 329px) {

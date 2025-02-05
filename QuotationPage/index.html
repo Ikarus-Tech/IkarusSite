@@ -4,9 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Agende uma chamada ou solicite uma cotação com a Ikarus Tech, a sua parceira em tecnologia. Oferecemos soluções personalizadas em sistemas, automação residencial e segurança eletrônica." />
-  <meta name="keywords" content="cotação, agendar chamada, Ikarus Tech, sistemas personalizados, automação residencial, segurança eletrônica, soluções tecnológicas" />
-  
+  <meta name="description"
+    content="Agende uma chamada ou solicite uma cotação com a Ikarus Tech, a sua parceira em tecnologia. Oferecemos soluções personalizadas em sistemas, automação residencial e segurança eletrônica." />
+  <meta name="keywords"
+    content="cotação, agendar chamada, Ikarus Tech, sistemas personalizados, automação residencial, segurança eletrônica, soluções tecnológicas" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXJWRSVTWB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SXJWRSVTWB');
+  </script>
+
   <link rel="shortcut icon" href="../../Media/Images/Icones/IKT-favicon 64x64.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -239,7 +251,7 @@
             <li><a href="../Services/desenvolvimento-web/index.html">Desenvolvimento de Websites e Webapps</a></li>
             <li><a href="../Services/seguranca-eletronica/index.html">Segurança Electrônica</a></li>
             <li><a href="../Services/automacao-residencial/index.html">Automação Reside
-              êncial</a></li>
+                êncial</a></li>
           </ul>
         </section>
         <!-- Contato -->
@@ -272,7 +284,7 @@
         const submitButton = form.querySelector('button[type="submit"]');
         submitButton.disabled = true;
         submitButton.textContent = "Processando...";
-  
+
         fetch(form.action, {
           method: form.method,
           body: new FormData(form),
@@ -287,11 +299,11 @@
           });
       });
     }
-  
+
     // Inicializar o script para ambos os formulários
     handleFormSubmit("quotationForm");
     handleFormSubmit("callForm");
-  </script>  
+  </script>
 </body>
 
 </html>
